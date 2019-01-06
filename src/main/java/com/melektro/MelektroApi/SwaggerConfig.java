@@ -56,8 +56,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("swaggertest")
-                .description("here goes desc")
+                .title("MelektroApi")
+                .description("Various APIs at www.melektro.eu")
                 .version("1.0")
                 .build();
     }
