@@ -9,6 +9,8 @@ import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnResource;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -31,7 +33,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @PropertySource({"classpath:swagger.properties"})
 @ConditionalOnResource(resources = {"classpath:swagger.properties"})
+
+// mtn 
 @Configuration
+// according to https://stackoverflow.com/questions/41718459/spring-boot-swagger-2-configuration-error-creating-bean-with-name-documentation
+//@Import(SwaggerConfig.class)
+
 public class SwaggerConfig {
 
     @Autowired(required = false)
@@ -43,10 +50,12 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         System.out.println("docket created for end-point [" + swagger2Endpoint + "]");
+        //System.out.println("docket created for end-point [/]");
 
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .pathMapping(swagger2Endpoint)
+                //.pathMapping("/")
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
@@ -60,5 +69,13 @@ public class SwaggerConfig {
                 .description("Various APIs at www.melektro.eu")
                 .version("1.0")
                 .build();
+        
     }
+
+    @Bean
+    public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>
+            webServerFactoryCustomizer() {
+        return factory -> factory.setContextPath("/MelektroApi");
+    }
+
 }
