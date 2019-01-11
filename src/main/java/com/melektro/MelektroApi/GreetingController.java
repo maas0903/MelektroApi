@@ -26,6 +26,7 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
     @ApiOperation(value = "put World as default and your name if you supply it",  notes = "Returns Hello YourName")
+    @ApiIgnore
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }

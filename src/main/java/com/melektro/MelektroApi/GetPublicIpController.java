@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  *
@@ -24,6 +25,7 @@ public class GetPublicIpController {
     
     @RequestMapping(value = "/GetPublicIp", method = RequestMethod.GET)
     @ApiOperation(value = "Input proxy and proxyport, default is not to use proxy",  notes = "Returns JSON with the information")
+    @ApiIgnore
     public Object get(@RequestParam(value = "proxy", defaultValue = "") String proxy, @RequestParam(value = "proxyport", defaultValue = "") String proxyport) throws Exception {
         return GetPublicIp(proxy, proxyport);
     }
