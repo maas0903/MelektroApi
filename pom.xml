@@ -26,15 +26,24 @@
             <name>jcenter</name>
             <url>https://jcenter.bintray.com/</url>
         </repository>
-        
+
         <repository>
             <id>local-maven-repo</id>
             <url>file:///${project.basedir}/local-maven-repo</url>
         </repository>
         
+        
     </repositories>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.melektro.Tools</groupId>
+            <artifactId>MelektroTools</artifactId>
+            <version>1.10</version>
+            <type>jar</type>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -65,13 +74,6 @@
         </dependency>
         
         <dependency>
-            <groupId>com.melektro.Tools</groupId>
-            <artifactId>MelektroTools</artifactId>
-            <version>1.6</version>
-            <type>jar</type>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
@@ -100,6 +102,24 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.melektro.MelektroApi.MelektroApiApplication</mainClass>
+                    <!--arguments>
+                        <argument>foo</argument>
+                        <argument>bar</argument>
+                    </arguments-->
+                </configuration>
+            </plugin>        
         </plugins>
     </build>
 </project>
