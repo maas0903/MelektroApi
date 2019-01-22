@@ -5,7 +5,7 @@
  */
 package com.melektro.MelektroApi;
 
-import javax.servlet.ServletContext;
+//import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnResource;
@@ -42,7 +42,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
     @Autowired(required = false)
-    private ServletContext servletContext_;
+    //private ServletContext servletContext_;
 
     @Value("${springfox.documentation.swagger.v2.path}")
     private String swagger2Endpoint;
