@@ -35,8 +35,8 @@ Run on port 80:
 		//SpringApplication.run(MelektroApiApplication.class, args);
 	}
 	
-sudo systemctl stop tomcat8	
-sudo systemctl start tomcat8	
+sudo systemctl stop tomcat8
+sudo systemctl start tomcat8
 	
 gives swagger.json
 http://localhost:8080/MelektroApi/
