@@ -20,12 +20,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 //@RequestMapping("/nato")
 @Api(value = "restcontroller", description = "get the nato phonetic alphabet and morse code of an input string")
-public class NatoAlphabetController {
-    
+public class NatoAlphabetController
+{
+
     //@GetMapping("/{str}")
     @RequestMapping(value = "/nato", method = RequestMethod.GET)
-    @ApiOperation(value = "get the nato phonetic alphabet and morse code of an input string",  notes = "Returns JSON with the information")
-    public Object get(@RequestParam(value = "input string", defaultValue = "abcde") String str) {
+    @ApiOperation(value = "get the nato phonetic alphabet and morse code of an input string", notes = "Returns JSON with the information")
+    public Object get(@RequestParam(value = "input string", defaultValue = "abcde") String str)
+    {
         return GetNato(str);
     }
 }

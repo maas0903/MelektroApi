@@ -21,7 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @RestController
 @Api(value = "restcontroller", description = "get the next specified number of times and time of the ISS given the latitude and longitude")
-public class GetIssWhenController {
+public class GetIssWhenController
+{
 
     @RequestMapping(value = "/GetIssWhen", method = RequestMethod.GET)
     @ApiOperation(value = "Get time and ISS position", notes = "Returns JSON with the information")
@@ -32,7 +33,8 @@ public class GetIssWhenController {
             @RequestParam(value = "longitude", defaultValue = "27.548342") String lon,
             @RequestParam(value = "numberofevents", defaultValue = "5") String cnt,
             @RequestParam(value = "yourgmtvalue", defaultValue = "1") Integer gmt
-    ) throws Exception {
+    ) throws Exception
+    {
         //Calendar now = Calendar.getInstance();
         //get current TimeZone using getTimeZone method of Calendar class
         //TimeZone timeZone = now.getTimeZone();

@@ -20,12 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Api(value = "exchangeratecontroller", description = "get the exchangerate for a from to currency")
-public class ExchangerateController {
+public class ExchangerateController
+{
+
     @RequestMapping(value = "/exchangerate", method = RequestMethod.GET)
-    @ApiOperation(value = "Get the exchange rate",  notes = "Returns JSON with exchange rate")
-    public Object get(@RequestParam(value = "from", defaultValue = "EUR") String  fromCurrency, @RequestParam(value = "to", defaultValue = "GBP") String  toCurrency ) throws IOException, InterruptedException {
+    @ApiOperation(value = "Get the exchange rate", notes = "Returns JSON with exchange rate")
+    public Object get(@RequestParam(value = "from", defaultValue = "EUR") String fromCurrency, @RequestParam(value = "to", defaultValue = "GBP") String toCurrency) throws IOException, InterruptedException
+    {
         return GetExchangeRate(fromCurrency, toCurrency);
     }
-    
-}
 
+}

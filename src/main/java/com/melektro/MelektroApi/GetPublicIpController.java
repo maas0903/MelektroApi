@@ -21,12 +21,14 @@ import springfox.documentation.annotations.ApiIgnore;
  */
 @RestController
 @Api(value = "restcontroller", description = "get your public IP Address")
-public class GetPublicIpController {
-    
+public class GetPublicIpController
+{
+
     @RequestMapping(value = "/GetPublicIp", method = RequestMethod.GET)
-    @ApiOperation(value = "Input proxy and proxyport, default is not to use proxy",  notes = "Returns JSON with the information")
+    @ApiOperation(value = "Input proxy and proxyport, default is not to use proxy", notes = "Returns JSON with the information")
     @ApiIgnore
-    public Object get(@RequestParam(value = "proxy", defaultValue = "") String proxy, @RequestParam(value = "proxyport", defaultValue = "") String proxyport) throws Exception {
+    public Object get(@RequestParam(value = "proxy", defaultValue = "") String proxy, @RequestParam(value = "proxyport", defaultValue = "") String proxyport) throws Exception
+    {
         return GetPublicIp(proxy, proxyport);
     }
 }

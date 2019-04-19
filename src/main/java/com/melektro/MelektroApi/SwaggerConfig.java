@@ -31,15 +31,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Component
 @Order(1)
 @EnableSwagger2
-@PropertySource({"classpath:swagger.properties"})
-@ConditionalOnResource(resources = {"classpath:swagger.properties"})
+@PropertySource(
+        {
+            "classpath:swagger.properties"
+        })
+@ConditionalOnResource(resources =
+{
+    "classpath:swagger.properties"
+})
 
 // mtn 
 @Configuration
 // according to https://stackoverflow.com/questions/41718459/spring-boot-swagger-2-configuration-error-creating-bean-with-name-documentation
 //@Import(SwaggerConfig.class)
 
-public class SwaggerConfig {
+public class SwaggerConfig
+{
 
     @Autowired(required = false)
     //private ServletContext servletContext_;
@@ -48,7 +55,8 @@ public class SwaggerConfig {
     private String swagger2Endpoint;
 
     @Bean
-    public Docket api() {
+    public Docket api()
+    {
         System.out.println("docket created for end-point [" + swagger2Endpoint + "]");
         //System.out.println("docket created for end-point [/]");
 
@@ -63,18 +71,20 @@ public class SwaggerConfig {
         return docket;
     }
 
-    private ApiInfo apiInfo() {
+    private ApiInfo apiInfo()
+    {
         return new ApiInfoBuilder()
                 .title("MelektroApi")
                 .description("Various APIs at www.melektro.eu")
                 .version("1.0")
                 .build();
-        
+
     }
 
     @Bean
     public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>
-            webServerFactoryCustomizer() {
+            webServerFactoryCustomizer()
+    {
         return factory -> factory.setContextPath("/MelektroApi");
     }
 

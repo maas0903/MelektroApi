@@ -20,11 +20,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 @RequestMapping("/today")
 @Api(value = "restcontroller", description = "get today in history")
-public class TodayController {
-    
+public class TodayController
+{
+
     @GetMapping("/")
-    @ApiOperation(value = "Get today in history",  notes = "Returns JSON with todays date and lists for events, births and deaths")
-    public String getJson() throws IOException, InterruptedException {
+    @ApiOperation(value = "Get today in history", notes = "Returns JSON with todays date and lists for events, births and deaths")
+    public String getJson() throws IOException, InterruptedException
+    {
         return GetToday_Formatted();
     }
 }

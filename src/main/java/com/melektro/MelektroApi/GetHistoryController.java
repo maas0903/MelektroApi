@@ -21,12 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 //@RequestMapping("/gethistory")
 @Api(value = "restcontroller", description = "get a day in history")
-public class GetHistoryController {
+public class GetHistoryController
+{
 
     //@GetMapping("/{dt}")
     @RequestMapping(value = "/gethistory", method = RequestMethod.GET)
-    @ApiOperation(value = "Get a day in history",  notes = "Returns JSON with todays date and lists for events, births and deaths")
-    public Object get(@RequestParam(value = "dt", defaultValue = "december_25") String  dt) throws IOException, InterruptedException {
+    @ApiOperation(value = "Get a day in history", notes = "Returns JSON with todays date and lists for events, births and deaths")
+    public Object get(@RequestParam(value = "dt", defaultValue = "december_25") String dt) throws IOException, InterruptedException
+    {
         return GetADay_Formatted(dt);
     }
 

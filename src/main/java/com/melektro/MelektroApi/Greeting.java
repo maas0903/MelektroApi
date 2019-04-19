@@ -9,17 +9,25 @@ package com.melektro.MelektroApi;
  *
  * @author marius
  */
-public class Greeting {
+public class Greeting
+{
+
     private final long id;
     private final String content;
-    public Greeting(long id, String content) {
+
+    public Greeting(long id, String content)
+    {
         this.id = id;
         this.content = content;
     }
-    public long getId() {
+
+    public long getId()
+    {
         return id;
     }
-    public String getContent() {
+
+    public String getContent()
+    {
         return content;
-    }    
+    }
 }

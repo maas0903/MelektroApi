@@ -18,11 +18,14 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @RestController
 @RequestMapping("/random")
-public class RandomController {
-    
+public class RandomController
+{
+
     @GetMapping("/")
-    public Object get() {
+    public Object get()
+    {
         List<String> ThisSet;
         ThisSet = RandomEMSet.makeARandomEMSet();
-        return new GsonBuilder().setPrettyPrinting().create().toJson(ThisSet);    }
+        return new GsonBuilder().setPrettyPrinting().create().toJson(ThisSet);
+    }
 }
