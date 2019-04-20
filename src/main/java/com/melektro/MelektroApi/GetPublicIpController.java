@@ -5,7 +5,7 @@
  */
 package com.melektro.MelektroApi;
 
-import static com.melektro.Tools.ExtAPIs.GetPublicIp;
+import static com.melektro.tools.ExtAPIs.GetPublicIp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RestController;

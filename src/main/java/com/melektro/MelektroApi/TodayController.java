@@ -5,7 +5,7 @@
  */
 package com.melektro.MelektroApi;
 
-import static com.melektro.Tools.ExtAPIs.GetToday_Formatted;
+import static com.melektro.tools.ExtAPIs.GetToday_Formatted;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.io.IOException;

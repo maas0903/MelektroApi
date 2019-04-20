@@ -5,7 +5,7 @@
  */
 package com.melektro.MelektroApi;
 
-import static com.melektro.Tools.ExtAPIs.GetIssWhen;
+import static com.melektro.tools.ExtAPIs.GetIssWhen;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 //import java.util.Calendar;

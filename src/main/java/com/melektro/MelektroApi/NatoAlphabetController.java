@@ -5,7 +5,7 @@
  */
 package com.melektro.MelektroApi;
 
-import static com.melektro.Tools.Nato.GetNato;
+import static com.melektro.tools.Nato.GetNato;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RestController;

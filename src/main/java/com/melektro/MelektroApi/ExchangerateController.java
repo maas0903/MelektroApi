@@ -5,7 +5,7 @@
  */
 package com.melektro.MelektroApi;
 
-import static com.melektro.Tools.ExtAPIs.GetExchangeRate;
+import static com.melektro.tools.ExtAPIs.GetExchangeRate;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.io.IOException;
