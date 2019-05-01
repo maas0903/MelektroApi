@@ -91,7 +91,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>melektrotoolsmvn</artifactId>
+            <artifactId>MelektroToolsMvn</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>

@@ -1,4 +1,8 @@
-from command line run mvn exec:java
+from command line run 
+mvn exec:java
+
+if MelektroToolsMvn changed, copy files to pi and then
+mvn install:install-file -DgroupId=com.melektro -DartifactId=MelektroToolsMvn -Dversion=1.0 -Dpackaging=jar -Dfile=../melektrotoolsmvn/target/melektrotoolsmvn-1.0.jar
 
 note: this was added to the pom to expose the main method:
     <build>
