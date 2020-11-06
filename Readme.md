@@ -2,7 +2,10 @@ from command line run
 mvn exec:java
 
 if MelektroToolsMvn changed, copy files to pi and then
-mvn install:install-file -DgroupId=com.melektro -DartifactId=MelektroToolsMvn -Dversion=1.0 -Dpackaging=jar -Dfile=../melektrotoolsmvn/target/melektrotoolsmvn-1.0.jar
+mvn install:install-file -DgroupId=com.melektro -DartifactId=MelektroToolsMvn -Dversion=1.3 -Dpackaging=jar -Dfile=../melektrotoolsmvn/target/melektrotoolsmvn-1.3.jar
+
+on windows:
+mvn install:install-file -DgroupId=com.melektro -DartifactId=MelektroToolsMvn -Dversion=1.3 -Dpackaging=jar -Dfile=c:\Users\mariu\Documents\NetBeansProjects\melektrotoolsmvn\target\melektrotoolsmvn-1.3.jar
 
 note: this was added to the pom to expose the main method:
     <build>
@@ -43,19 +46,21 @@ sudo systemctl stop tomcat8
 sudo systemctl start tomcat8
 	
 gives swagger.json
+http://pastei05.local/MelektroApi/
 http://localhost:8080/MelektroApi/
 http://localhost/MelektroApi/
 
 gives swagger ui
 http://localhost:8080/MelektroApi/swagger-ui.html
 http://localhost/MelektroApi/swagger-ui.html
+http://pastei05.local/MelektroApi/swagger-ui.html
 
 Gives ok test:
 http://localhost:8080/MelektroApi/greeting?name=World
 http://localhost:/MelektroApi/greeting?name=World
 
 TODO: Change to WAR
-      GetIss timstamp to datetime  
+      GetIss timestamp to datetime  
 
 
 Create a new folder, "local-maven-repo"
@@ -69,7 +74,7 @@ Add a local repo inside pom.xml:
     </repository>
 </repositories>
 
-mvn deploy:deploy-file -DgroupId=com.melektro.Tools -DartifactId=MelektroTools -Dversion=1.0 -Durl=file:./local-maven-repo/ -DrepositoryId=local-maven-repo -DupdateReleaseInfo=true -Dfile=c:\Users\marius\Documents\NetBeansProjects\melektroTools\dist\melektroTools.jar
+mvn deploy:deploy-file -DgroupId=com.melektro.Tools -DartifactId=MelektroTools -Dversion=1.0 -Durl=file:./local-maven-repo/ -DrepositoryId=local-maven-repo -DupdateReleaseInfo=true -Dfile=c:\Users\mariu\Documents\NetBeansProjects\melektroTools\dist\melektroTools.jar
 
 
 
