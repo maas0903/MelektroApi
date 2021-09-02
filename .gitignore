@@ -30,8 +30,8 @@ target/
 .springBeans
 .sts4-cache
 
-.vs
-.vscode
+.vs/**
+.vscode/**
 
 ### IntelliJ IDEA ###
 .idea
