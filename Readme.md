@@ -2,10 +2,12 @@ from command line run
 mvn exec:java
 
 if MelektroToolsMvn changed, copy files to pi and then
-mvn install:install-file -DgroupId=com.melektro -DartifactId=MelektroToolsMvn -Dversion=1.3 -Dpackaging=jar -Dfile=../melektrotoolsmvn/target/melektrotoolsmvn-1.3.jar
+mvn install:install-file -DgroupId=com.melektro -DartifactId=melektrotoolsmvn -Dversion=1.8 -Dpackaging=jar -Dfile=../melektrotoolsmvn/target/melektrotoolsmvn-1.8.jar
+
+make sure that sudo nano /etc/maven/settings.xml has the <localRepository>/home/pi/.m2/repository</localRepository> setup
 
 on windows:
-mvn install:install-file -DgroupId=com.melektro -DartifactId=MelektroToolsMvn -Dversion=1.3 -Dpackaging=jar -Dfile=c:\Users\mariu\Documents\NetBeansProjects\melektrotoolsmvn\target\melektrotoolsmvn-1.3.jar
+mvn install:install-file -DgroupId=com.melektro -DartifactId=MelektroToolsMvn -Dversion=1.8 -Dpackaging=jar -Dfile=c:\Users\mariu\Documents\NetBeansProjects\melektrotoolsmvn\target\melektrotoolsmvn-1.8.jar
 
 note: this was added to the pom to expose the main method:
     <build>
