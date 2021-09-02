@@ -80,12 +80,12 @@ public class BranderSettingsController2 {
 
         return "{"
                 + "\"hourOn\":" + hourOn
-                + "\"minuteOn\":" + hourOn
+                + "\"minuteOn\":" + minuteOn
                 + ",\"durationOn\":" + durationOn
                 + ",\"override\":" + override
                 + ",\"summer\":" + summer
                 + ",\"hourOff\":" + hourOff
-                + ",\"minuteOff\":" + hourOff
+                + ",\"minuteOff\":" + minuteOff
                 + ",\"degreesOff\":" + degreesOff
                 + ",\"absoluteMin\":" + absoluteMin
                 + ",\"urlName\":" + urlName
@@ -94,7 +94,7 @@ public class BranderSettingsController2 {
 
     public static void Log(String message) {
         System.out.println(message);
-        internalLogger.log(Level.ALL, message);
+        //internalLogger.log(Level.ALL, message);
     }
 
 
@@ -198,7 +198,8 @@ public class BranderSettingsController2 {
         String degrees = getReferenceTemperature(urlName);
         getCurrentHourAndMinute();
         String dayOfMonth = getCurrentDayOfMonth();
-        return "{"
+        String result =  
+               "{"
                 + "\"hourOn\":\"" + hourOn + "\","
                 + "\"minuteOn\":\"" + minuteOn + "\","
                 + "\"durationOn\":\"" + durationOn + "\","
@@ -211,8 +212,11 @@ public class BranderSettingsController2 {
                 + "\"degrees\":\"" + degrees + "\","
                 + "\"hourOfDay\":\"" + hourOfDay + "\","
                 + "\"minuteOfDay\":\"" + minuteOfDay + "\","
-                + "\"dayOfMonth\":\"" + dayOfMonth + "\""
+                + "\"dayOfMonth\":\"" + dayOfMonth + "\","
+                + "\"urlName\":\"" + urlName + "\""
                 + "}";
+        Log(result);
+        return result;
     }
 
     private static Properties GetProperties() {
